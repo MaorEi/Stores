@@ -38,7 +38,7 @@ def create_item():
     if item_data["store_id"] not in stores:
         abort(404, message="Store not found.")
     item_id = uuid.uuid4().hex
-    item = {**item_id, "id": item_id}
+    item = {**item_data, "id": item_id}
     items[item_id] = item
     return item, 201
 
